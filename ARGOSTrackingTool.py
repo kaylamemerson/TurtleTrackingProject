@@ -16,15 +16,14 @@ file_name = './data/raw/Sara.txt'
 file_object = open(file_name,'r')
 
 #Read contents of file into a list
-line_list = file_object.readlines()
-
-#Close the file
-file_object.close()
+lineString = file_object.readline()
 
 #Pretend we read one line of data from the file
-for lineString in line_list:
+#Iterate through lines
+while lineString != "":
     # Check if line is a data line
     if lineString[0] in ("#","u"):
+        lineString = file_object.readline()
         continue
     #extract items from list into variables
     lineData = lineString.split()
@@ -33,6 +32,11 @@ for lineString in line_list:
     obs_lc = lineData[4]
     obs_lat = lineData[6]
     obs_lon =lineData[7]
+    
     #print the location of sara
     print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}")
+    # Move to the next line
+    lineString = file_object.readline()
+# Close the file
+file_object.close()
 
