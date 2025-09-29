@@ -16,7 +16,10 @@ file_name = './data/raw/Sara.txt'
 file_object = open(file_name,'r')
 
 #Read contents of file into a list
-lineString = file_object.readline()
+line_list = file_object.readlines()
+
+#Close the file
+file_object.close()
 
 #Pretend we read one line of data from the file
 for lineString in line_list:
