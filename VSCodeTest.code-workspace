@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../VSCodeTest"
+		},
+		{
+			"name": "TurtleTrackingProject",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
